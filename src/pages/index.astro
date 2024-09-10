@@ -1,0 +1,589 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Header from '~/components/widgets/Header.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import {GITHUB_URL, LINKEDIN_URL, MALT_URL, EMAIL} from '~/utils/constants';
+
+const metadata = {
+  title: 'Romain Quencez',
+};
+---
+
+<Layout metadata={metadata}>
+  <Fragment slot="announcement"></Fragment>
+  <Fragment slot="header">
+    <Header
+      links={[
+        { text: 'Accueil', href: '#' },
+        { text: 'Expérience', href: '#cv' },
+        { text: 'Porfolio', href: '#porfolio' },
+        { text: 'Contact', href: '#porfolio' },
+      ]}
+      socialLinks={[
+        { ariaLabel: 'Malt', icon: 'tabler:briefcase', href: MALT_URL },
+        { ariaLabel: 'Linkedin', icon: 'tabler:brand-linkedin', href: LINKEDIN_URL },
+        { ariaLabel: 'GitHub', icon: 'tabler:brand-github', href: GITHUB_URL },
+      ]}
+      isSticky
+      showToggleTheme
+    />
+  </Fragment>
+
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero
+    id="hero"
+    title="Romain Quencez"
+    tagline="Développeur web full-stack"
+    actions={
+      [
+        { variant: 'primary', text: 'Malt', href: MALT_URL, icon: 'tabler:briefcase' },
+        { variant: 'secondary', text: 'Linkedin', href: LINKEDIN_URL, icon: 'tabler:brand-linkedin' },
+        { variant: 'secondary', text: 'Email', href: `mailto:${EMAIL}`, icon: 'tabler:mail' }
+      ]
+    }
+  >
+    <Fragment slot="subtitle">
+      Freelance, développeur web full-stack Python VueJS
+    </Fragment>
+  </Hero>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="apropos"
+    columns={3}
+    items={[
+      {
+        icon: 'tabler:briefcase',
+        classes: {icon: 'bg-malt'},
+        callToAction: {
+          target: '_blank',
+          text: 'Malt',
+          href: MALT_URL,
+        },
+      },
+      {
+        icon: 'tabler:brand-linkedin',
+        classes: {icon: 'bg-linkedin'},
+        callToAction: {
+          target: '_blank',
+          text: 'Linkedin',
+          href: LINKEDIN_URL,
+        },
+      },
+      {
+        icon: 'tabler:mail',
+        callToAction: {
+          target: '_blank',
+          text: 'Email',
+          href: `mailto:${EMAIL}`,
+        },
+      },
+    ]}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">A propos</h2>
+      <p>
+        Après neuf années d'expérience en tant que développeur fullstack, je souhaite aujourd'hui mettre mes compétences au service de votre entreprise.<br/><br/>
+      </p>
+      <p>
+        J'ai acquis des compétences en backend <strong>Python</strong> avec les frameworks <strong>Django</strong>, <strong>Django REST Framework</strong> et <strong>FastAPI</strong>, et en frontend avec le framework JavaScript <strong>VueJS</strong> (versions 2 et 3), et les framework CSS <strong>Bulma</strong> (et son intégration VueJS Buefy) et <strong>Bootstrap</strong>.<br/><br/>
+      </p>
+      <p>
+        Je travaille avec le système de versionning <strong>Git</strong>, et je crée l’architecture de votre projet avec <strong>Docker</strong> et <strong>Docker Compose</strong>. Je peux assurer le déploiement de la solution avec des CI/CD comme <strong>Jenkins</strong> ou <strong>GitHub Actions</strong>, et la maintenance sur serveur <strong>Linux/Ubuntu</strong>.<br/><br/>
+      </p>
+      <p>
+        J’ai également de l’expérience avec la base de données <strong>PostgreSQL</strong> et les requêtes SQL, et le moteur de recherche <strong>ElasticSearch</strong>. Je saurais optimiser votre site pour qu’il soit responsive sur tous les écrans, optimisé pour les connections lentes et accessible <strong>RGAA</strong>.<br/><br/>
+      </p>
+      <p>
+        Je serais à même de vous conseiller selon vos besoins, et de planifier, réaliser, héberger et maintenir votre projet.
+      </p>
+      <p>Vous pouvez me contacter sur les plateformes ci-dessous:</p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    id="cv"
+    title="Expérience"
+    items={[
+      {
+        title:
+          'Développeur web full-stack <br /> <span class="font-normal"><a href="https://www.atolcd.com">Atol Conseil et Développement</a>, Dijon</span> <br /> <span class="text-sm font-normal">2018 - 2023</span>',
+        description: `Python, VueJS, PostgreSQL, Docker.`,
+        icon: 'tabler:briefcase',
+      },
+      {
+        title:
+          'Développeur web, informaticien et formateur <br /> <span class="font-normal"><a href="https://www.association-ore.fr">ORE</a>, Quetigny</span> <br /> <span class="text-sm font-normal">2014 - 2017</span>',
+        description: `Développement de site web<br />Gestion des réseaux sociaux<br />Communication externe<br />Maintenance postes informatique<br />Cours d'informatique pour jeunes et adultes<br />Installation et utilisation des plateformes éducatives Moodle et OpenMeetings<br />Gestion administrative`,
+        icon: 'tabler:briefcase',
+      },
+      {
+        title:
+          'Créateur d\'application Android<br /> <span class="font-normal"><a href="https://www.linkedin.com/company/indelebil/about/">Indelebil</a>, stage à Dijon</span> <br /> <span class="text-sm font-normal">2013</span>',
+        description: `Création d'une application Android et mise en place de l'interface graphique et de la partie algorithmique.`,
+        icon: 'tabler:briefcase',
+      }
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    id="etudes"
+    title="Etudes"
+    items={[
+      {
+        title: `<a href="https://formations.u-bourgogne.fr/fr/offre-de-formation/licence-professionnelle-DP/licence-professionnelle-metiers-de-l-informatique-applications-web-LMGC23QT/systemes-intra-internet-pour-l-entreprise-LMGEP9BI.html">L3 Pro Métiers de l'Internet, Systèmes Intra/Extranet pour l'Entreprise</a> <br /> <span class="font-normal"><a href="https://sciences-techniques.u-bourgogne.fr/">URF Sciences et Techniques, Université de Bourgogne</a></span> <br /> <span class="text-sm font-normal">2017 - 2018</span>`,
+        icon: 'tabler:school',
+        description: 'Communiquer par oral et par écrit, de façon claire et non-ambiguë, dans au moins une langue étrangère.<br />' +
+          'Travailler en équipe et en réseau ainsi qu’en autonomie et responsabilité au service d’un projet<br />' +
+          'Maîtriser le génie logiciel<br />' +
+          'Maîtriser la programmation<br />' +
+          'Concevoir, déployer, gérer et faire évoluer une application Web ou mobile<br />' +
+          'Connaître les méthodes de gestion de projet informatique<br />' +
+          'Assurer la qualité, la sûreté, la sécurité et la performance des applications',
+      },
+      {
+        title: `L3 Pro Activités et Techniques de Communication, option Communication et marketing<br /> <span class="font-normal"><a href="https://iutdijon.u-bourgogne.fr/www/">IUT de Dijon-Auxerre</a></span> <br /> <span class="text-sm font-normal">2016 - 2017</span>`,
+        icon: 'tabler:school',
+        description: 'Former des professionnels polyvalents capables de concevoir et de mettre en place des stratégies et des outils numériques de communication et d’information, aussi bien dans des institutions publiques que dans des entreprises privées, autant dans de petites structures que dans de grandes organisations.<br/>' +
+          'Former à la fois aux outils du web, aux usages professionnels des réseaux sociaux numériques et à leur mise en oeuvre par des services de communication, de documentation ou des bibliothèques.<br/>' +
+          'Permettre à des salariés d’entreprises privées ou d’organismes publics ou à des demandeurs d’emploi d’avoir la possibilité d’acquérir des compétences nouvelles adaptées aux besoins du marché.'
+      },
+      {
+        title: `Formation Développeur Web Logiciel <br /> <span class="font-normal"><a href="https://www.bourgogne-greta.fr/">GRETA 21</a></span> <br /> <span class="text-sm font-normal">2012 - 2013</span>`,
+        icon: 'tabler:school',
+        description: 'Développer ou faire évoluer des applications orientées web, ou web mobile ou les deux à la fois, en respectant les normes et standards reconnus par la profession et en suivant l\'état de l\'art de la sécurité informatique à toutes les étapes.<br/>' +
+          'Coder l\'ensemble avec les langages de programmation web adaptés et une architecture applicative conforme aux bonnes pratiques du développement web et web mobile.<br/>' +
+          'Réaliser la partie visuelle de l\'application dans un premier temps de manière statique et en la rendant adaptable au contexte puis dans un deuxième temps capable d\'interagir avec l\'utilisateur de manière dynamique.<br/>' +
+          'Installer et adapter une solution préétablie de gestion de contenu ou d\'e- commerce, en fonction des besoins de l\'utilisateur et en respectant les principes de sécurisation des interfaces utilisateur et prend en compte la charte graphique, ou les interfaces utilisateur standardisées, ainsi que les règles d\'accessibilité'
+      },
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+  
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    id="formations"
+    title="Formations"
+    items={[
+      {
+                title: `Pack Micro : 2 jours Devenir micro-entrepreneur<br /> <span class="font-normal"><a href="https://www.artisanat-bfc.fr/detail-offre/pack-micro-2-jours-devenir-micro-entrepreneur-2">CMA BFC</a></span> <br /> <span class="text-sm font-normal">2024</span>`,
+        icon: 'tabler:file-certificate',
+        description: `Obtenir les premières informations sur le statut micro-entrepreneur et vérifier si ce régime est adapté à son projet de création et de vie.<br/>Comprendre les mécanismes financiers de base du statut micro-entrepreneur<br/>Mettre en place une organisation administrative et comptable efficace au sein du statut micro-entrepreneur<br />Connaître les démarches en matière de déclarations : calendrier des déclarations, obligations comptable et procéder aux télédéclarations.<br />Réaliser simplement ses démarches d'immatriculation en ligne et en toute sécurité.`
+      },
+      {
+        title: `5 jours pour entreprendre (5JPE) <br /> <span class="font-normal"><a href="https://www.cci.fr/ressources/creation-dentreprise/accompagnement-et-aides/5-jours-pour-entreprendre">CCI Dijon</a></span> <br /> <span class="text-sm font-normal">2023</span>`,
+        icon: 'tabler:file-certificate',
+        description: `Analyser vos capacités et aptitudes au regard des compétences attendues et de la posture d’un dirigeant<br/>Identifier les contraintes et opportunités de votre projet entrepreneurial<br/>Identifier les outils nécessaires à la construction de votre projet entrepreneurial<br/>Evaluer les ressources nécessaires pour construire votre projet entrepreneurial`,
+      },
+      {
+        title: `English Certificate <br /> <span class="font-normal"><a href="https://cert.efset.org/nb86Qa">EF SET</a></span> <br /> <span class="text-sm font-normal">2023</span>`,
+        icon: 'tabler:file-certificate',
+        description: '79/100 (C2 Proficient)<br/><br/>Can read with ease virtually all forms of written language, including abstract, structurally or linguistically complex texts such as manuals, specialized articles and literary works<br/>Can understand a wide range of long and complex texts, appreciating subtle distinctions of style, and implicit meaning<br />Can understand in detail complex texts likely to be encountered in social, professional or academic life, identifying finer points of detail including attitudes and implied opinions',
+      }
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+
+  <!-- Features3 Widget ************** -->
+
+  <Features3
+    title="Compétences"
+    subtitle=""
+    columns={3}
+    defaultIcon="tabler:point-filled"
+    items={[
+      {
+        title: 'Front-end',
+        description: 'Réalisation du frontend avec Vue 2 ou Vue 3, ainsi que des framework CSS comme Bulma (Buefy) et Bootstrap.',
+        icon: 'tabler:device-mobile',
+        classes: {icon: 'bg-white'},
+      },
+      {
+        title: 'Back-end',
+        description: 'Mise en place du backend avec Python conjugué avec FastAPI pour des points d\'API REST ou Django pour un framework complet.',
+        classes: {icon: 'bg-white'},
+        icon: 'tabler:settings',
+      },
+      {
+        title: 'Base de données',
+        description: 'Mise en relation de vos données avec PostgreSQL et l\'optimisation des requêtes SQL.',
+        classes: {icon: 'bg-white'},
+        icon: 'tabler:database',
+      },
+      {
+        title: 'Hébergement',
+        description: 'Déploiement de votre solution sur un serveur avec environnement Linux/Ubuntu avec Docker.',
+        icon: 'tabler:server',
+        classes: {icon: 'bg-white'},
+      },
+      {
+        title: 'CI/CD (déploiement automatisé)',
+        description: 'Livrer automatiquement et rapidement votre solution, pour un temps court entre le développement et la livraison.',
+        classes: {icon: 'bg-white'},
+        icon: 'tabler:package',
+      },
+      {
+        title: 'Mise à jour',
+        description: 'Mettre en place des mises à jour automatiques et effecuter une veille sur les dépendances.',
+        classes: {icon: 'bg-white'},
+        icon: 'tabler:refresh',
+      },
+      {
+        title: 'Analyse fonctionnelle',
+        description: 'Analyse de vos besoins et propositions de solutions.',
+        classes: {icon: 'bg-white'},
+        icon: 'tabler:search',
+      },
+      {
+        title: 'Tests automatisés',
+        description: 'Tests de votre solution avec Pytest.',
+        classes: {icon: 'bg-white'},
+        icon: 'tabler:check',
+      },
+      {
+        title: 'Flexibilité',
+        description: 'Capacité à s\'adapter aux exigences de votre projet.',
+        classes: {icon: 'bg-white'},
+        icon: 'tabler:thumb-up',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="porfolio"
+    title="Portfolio"
+    subtitle=""
+    isReversed
+    columns={2}
+    items={[
+      {
+        title: 'Python',
+        icon: 'tabler:brand-python',
+        classes: {icon: 'bg-python'},
+      },
+      {
+        title: 'FastAPI',
+        icon: 'tabler:api',
+        classes: {icon: 'bg-fastapi'},
+      },
+      {
+        title: 'Vue 3',
+        icon: 'tabler:brand-vue',
+        classes: {icon: 'bg-vuejs'},
+      },
+      {
+        title: 'Quasar',
+        icon: 'tabler:atom',
+        classes: {icon: 'bg-quasar'},
+      },
+      {
+        title: 'PWA',
+        icon: 'tabler:device-mobile',
+      },
+      {
+        title: 'App Android',
+        icon: 'tabler:brand-android',
+        classes: {icon: 'bg-android'},
+      },
+      {
+        title: 'PostgreSQL',
+        icon: 'tabler:database',
+        classes: {icon: 'bg-postgresql'},
+      },
+      {
+        title: 'Docker',
+        icon: 'tabler:brand-docker',
+        classes: {icon: 'bg-docker'},
+      },
+      {
+        title: 'Git',
+        icon: 'tabler:brand-git',
+        classes: {icon: 'bg-git'},
+      }
+    ]}
+    image={{
+      src: '~/assets/images/cenemat-light.png',
+      darkSrc: '~/assets/images/cenemat-dark.png',
+      alt: 'Capture d\'écran du projet',
+    }}
+    callToAction={{
+      target: '_blank',
+      text: 'Voir le site',
+      icon: 'tabler:chevron-right',
+      href: 'https://cenemat.fr/',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Cercle d'Entraide et d'Echange de Matériel (CENEMAT)<br />
+        <span class="text-2xl">2023 - Présent</span>
+      </h3>
+      <p>
+        Développement d'un site web et d'une application PWA permettant aux adhérents de rechercher et échanger du matériel agricole, et de pouvoir effectuer et suivre des commandes groupées. L'administrateur peut également gérer les adhérents.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent={true}
+    columns={2}
+    items={[
+      {
+        title: `<a href="https://astro.build/" title="Lien vers le site officiel">Astro</a>`,
+        icon: 'tabler:brand-astro',
+        classes: {icon: 'bg-astro'},
+      },
+      {
+        title: 'Node',
+        icon: 'tabler:brand-nodejs',
+        classes: {icon: 'bg-js'},
+      },
+      {
+        title: 'Tailwind',
+        icon: 'tabler:brand-tailwind',
+        classes: {icon: 'bg-tailwind'},
+      },
+      {
+        title: 'Git',
+        icon: 'tabler:brand-git',
+        classes: {icon: 'bg-git'},
+      }
+    ]}
+    image={{
+      src: '~/assets/images/auvidegrenierchevignois.webp',
+      alt: 'Capture d\'écran du projet',
+    }}
+    callToAction={{
+      target: '_blank',
+      text: 'Voir le site',
+      icon: 'tabler:chevron-right',
+      href: 'https://www.auvidegrenierchevignois.fr/',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Au vide-grenier Chevignois<br /><span class="text-2xl">2024</span>
+      </h3>
+      <p>
+        Mise en avant de l'activité et des offres du Vide-Grenier Chevignois situé à Chevigny-Saint-Sauveur.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+  
+  <!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent={true}
+    isReversed
+    columns={2}
+    items={[
+      {
+        title: 'Python',
+        icon: 'tabler:brand-python',
+        classes: {icon: 'bg-python'},
+      },
+      {
+        title: 'Django',
+        icon: 'tabler:brand-django',
+        classes: {icon: 'bg-django'},
+      },
+      {
+        title: 'Django REST Framework',
+        icon: 'tabler:api',
+        classes: {icon: 'bg-django'},
+      },
+      {
+        title: 'Vue 2',
+        icon: 'tabler:brand-vue',
+        classes: {icon: 'bg-vuejs'},
+      },
+      {
+        title: 'Bulma / Buefy',
+        icon: 'tabler:brand-bulma',
+        classes: {icon: 'bg-vuejs'},
+      },
+      {
+        title: 'PostgreSQL',
+        icon: 'tabler:database',
+        classes: {icon: 'bg-postgresql'},
+      },
+      {
+        title: 'Docker',
+        icon: 'tabler:brand-docker',
+        classes: {icon: 'bg-docker'},
+      },
+      {
+        title: 'Git',
+        icon: 'tabler:brand-git',
+        classes: {icon: 'bg-git'},
+      }
+    ]}
+    image={{
+      src: '~/assets/images/espresso.png',
+      alt: 'Capture d\'écran du projet',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Espresso<br />
+        <span class="text-2xl">2022</span>
+      </h3>
+      <p>
+        Aggrégateur d'actualité que l'utilisateur peut personnaliser selon les sources qu'il choisit. Intègration de centaines de sources d'actualité différentes et d'un moteur de recherche.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent={true}
+    columns={2}
+    items={[
+      {
+        title: 'PHP',
+        icon: 'tabler:brand-php',
+        classes: {icon: 'bg-php'},
+      },
+      {
+        title: 'WordPress',
+        icon: 'tabler:brand-wordpress',
+        classes: {icon: 'bg-wordpress'},
+      },
+    ]}
+    image={{
+      src: '~/assets/images/myeo.webp',
+      alt: 'Capture d\'écran du projet',
+    }}
+    callToAction={{
+      target: '_blank',
+      text: 'Voir le site (archive)',
+      icon: 'tabler:chevron-right',
+      href: 'https://web.archive.org/web/20180808193844/http://myeo.fr/',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Myeo<br /><span class="text-2xl">2017</span>
+      </h3>
+      <p>
+        Site de mise en avant de parcours découverte en Bourgogne.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Testimonials Widget ***********
+
+  <Testimonials
+    title="Client testimonials"
+    subtitle="Discover what clients have to say about their experiences working with me."
+    testimonials={[
+      {
+        testimonial: `She took our vague concept and turned it into a visual masterpiece that perfectly aligned with our goals. Her attention to detail and ability to translate ideas into compelling visuals exceeded our expectations.`,
+        name: 'Mark Thompson',
+        job: 'Creative director',
+        image: {
+          src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Mark Thompson Image',
+        },
+      },
+      {
+        testimonial: `She transformed our brand identity with her creative finesse, capturing our essence in every element. Her dedication and talent truly shine through her work.`,
+        name: 'Emily Martinez',
+        job: 'CEO',
+        image: {
+          src: 'https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=772&q=80',
+          alt: 'Emily Martinez Image',
+        },
+      },
+      {
+        testimonial: `She has an uncanny ability to communicate emotions and stories. She crafted a logo for our NGO that not only represents our cause but also evokes empathy. Her professionalism and commitment make her a designer of exceptional caliber.`,
+        name: 'Laura Simmons',
+        job: 'Founder of an NGO',
+        image: {
+          src: 'https://images.unsplash.com/photo-1554727242-741c14fa561c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Laura Simmons Image',
+        },
+      },
+      {
+        testimonial: `We entrusted Sarah with revamping our website's user interface, and the results were astounding. Her intuitive design sense enhanced user experience, leading to a significant increase in engagement. She's a designer who truly understands the synergy of aesthetics and functionality.`,
+        name: 'Alex Foster',
+        job: 'Director of web services',
+        image: {
+          src: 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Alex Foster Image',
+        },
+      },
+      {
+        testimonial: `She took our vision and elevated it beyond imagination. Her ability to capture brand essence and translate it into design is nothing short of remarkable. Working with her has been an inspiring journey.`,
+        name: 'Jessica Collins',
+        job: 'Product Manager',
+        image: {
+          src: 'https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=778&q=80',
+          alt: 'Jessica Collins Image',
+        },
+      },
+      {
+        testimonial: `Her ability to transform concepts into captivating visuals is nothing short of extraordinary. She took our event poster idea and turned it into a visual masterpiece that perfectly captured the essence of our festival. Sarah's dedication, creativity, and knack for delivering beyond expectations make her an invaluable asset to any project.`,
+        name: 'Michael Carter',
+        job: 'Event Coordinator',
+        image: {
+          src: 'https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+          alt: 'Michael Carter Image',
+        },
+      },
+    ]}
+  />
+  -->
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    title="Travaillons ensemble"
+    subtitle="Donnons vie à votre idée"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Contactez-moi',
+        href: MALT_URL,
+      },
+    ]}
+  />
+</Layout>

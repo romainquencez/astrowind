@@ -1,0 +1,17 @@
+---
+import favIcon from '~/assets/favicons/favicon.ico';
+import appleTouchIcon from '~/assets/favicons/apple-touch-icon.png';
+import favIcon32 from '~/assets/favicons/favicon-32x32.png';
+import favIcon16 from '~/assets/favicons/favicon-16x16.png';
+import manifest from '~/assets/favicons/site.webmanifest';
+import safariPinnedTab from '~/assets/favicons/safari-pinned-tab.svg';
+---
+
+<link rel="shortcut icon" href={favIcon} />
+<link rel="apple-touch-icon" sizes="180x180" href={appleTouchIcon.src}>
+<link rel="icon" type="image/png" sizes="32x32" href={favIcon32.src}>
+<link rel="icon" type="image/png" sizes="16x16" href={favIcon16.src}>
+<link rel="manifest" href={manifest}>
+<link rel="mask-icon" href={safariPinnedTab.src} color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
