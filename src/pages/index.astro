@@ -99,10 +99,10 @@ const metadata = {
         Je travaille avec le système de versionning <strong>Git</strong>, et je crée l’architecture de votre projet avec <strong>Docker</strong> et <strong>Docker Compose</strong>. Je peux assurer le déploiement de la solution avec des CI/CD comme <strong>Jenkins</strong> ou <strong>GitHub Actions</strong>, et la maintenance sur serveur <strong>Linux/Ubuntu</strong>.<br/><br/>
       </p>
       <p>
-        J’ai également de l’expérience avec la base de données <strong>PostgreSQL</strong> et les requêtes SQL, et le moteur de recherche <strong>ElasticSearch</strong>. Je saurais optimiser votre site pour qu’il soit responsive sur tous les écrans, optimisé pour les connections lentes et accessible <strong>RGAA</strong>.<br/><br/>
+        J’ai également de l’expérience avec la base de données <strong>PostgreSQL</strong>, les requêtes SQL, et le moteur de recherche <strong>ElasticSearch</strong>. Je saurais optimiser votre site pour qu’il soit responsive sur tous les écrans, optimisé pour les connections lentes et accessible <strong>RGAA</strong>.<br/><br/>
       </p>
       <p>
-        Je serais à même de vous conseiller selon vos besoins, et de planifier, réaliser, héberger et maintenir votre projet.
+        Je serais à même de vous conseiller selon vos besoins, de planifier, réaliser, héberger et maintenir votre projet.
       </p>
       <p>Vous pouvez me contacter sur les plateformes ci-dessous:</p>
     </Fragment>
@@ -111,6 +111,71 @@ const metadata = {
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Content>
+  
+  <!-- Features3 Widget ************** -->
+
+  <Features3
+    title="Compétences"
+    subtitle=""
+    columns={3}
+    defaultIcon="tabler:point-filled"
+    items={[
+      {
+        title: 'Front-end',
+        description: 'Réalisation du frontend avec Vue 2 ou Vue 3, ainsi que des framework CSS comme Bulma (Buefy) et Bootstrap.',
+        icon: 'tabler:device-mobile',
+        classes: {icon: 'bg-white'},
+      },
+      {
+        title: 'Back-end',
+        description: 'Mise en place du backend avec Python conjugué avec FastAPI pour des points d\'API REST ou Django pour un framework complet.',
+        classes: {icon: 'bg-white'},
+        icon: 'tabler:settings',
+      },
+      {
+        title: 'Base de données',
+        description: 'Mise en relation de vos données avec PostgreSQL et l\'optimisation des requêtes SQL.',
+        classes: {icon: 'bg-white'},
+        icon: 'tabler:database',
+      },
+      {
+        title: 'Hébergement',
+        description: 'Déploiement de votre solution sur un serveur avec environnement Linux/Ubuntu avec Docker.',
+        icon: 'tabler:server',
+        classes: {icon: 'bg-white'},
+      },
+      {
+        title: 'CI/CD (déploiement automatisé)',
+        description: 'Livrer automatiquement et rapidement votre solution, pour un temps court entre le développement et la livraison.',
+        classes: {icon: 'bg-white'},
+        icon: 'tabler:package',
+      },
+      {
+        title: 'Mise à jour',
+        description: 'Mettre en place des mises à jour automatiques et effecuter une veille sur les dépendances.',
+        classes: {icon: 'bg-white'},
+        icon: 'tabler:refresh',
+      },
+      {
+        title: 'Analyse fonctionnelle',
+        description: 'Analyse de vos besoins et propositions de solutions.',
+        classes: {icon: 'bg-white'},
+        icon: 'tabler:search',
+      },
+      {
+        title: 'Tests automatisés',
+        description: 'Tests de votre solution avec Pytest.',
+        classes: {icon: 'bg-white'},
+        icon: 'tabler:check',
+      },
+      {
+        title: 'Flexibilité',
+        description: 'Capacité à s\'adapter aux exigences de votre projet.',
+        classes: {icon: 'bg-white'},
+        icon: 'tabler:thumb-up',
+      },
+    ]}
+  />
 
   <!-- Steps Widget ****************** -->
 
@@ -200,72 +265,7 @@ const metadata = {
     ]}
     classes={{ container: 'max-w-3xl' }}
   />
-
-  <!-- Features3 Widget ************** -->
-
-  <Features3
-    title="Compétences"
-    subtitle=""
-    columns={3}
-    defaultIcon="tabler:point-filled"
-    items={[
-      {
-        title: 'Front-end',
-        description: 'Réalisation du frontend avec Vue 2 ou Vue 3, ainsi que des framework CSS comme Bulma (Buefy) et Bootstrap.',
-        icon: 'tabler:device-mobile',
-        classes: {icon: 'bg-white'},
-      },
-      {
-        title: 'Back-end',
-        description: 'Mise en place du backend avec Python conjugué avec FastAPI pour des points d\'API REST ou Django pour un framework complet.',
-        classes: {icon: 'bg-white'},
-        icon: 'tabler:settings',
-      },
-      {
-        title: 'Base de données',
-        description: 'Mise en relation de vos données avec PostgreSQL et l\'optimisation des requêtes SQL.',
-        classes: {icon: 'bg-white'},
-        icon: 'tabler:database',
-      },
-      {
-        title: 'Hébergement',
-        description: 'Déploiement de votre solution sur un serveur avec environnement Linux/Ubuntu avec Docker.',
-        icon: 'tabler:server',
-        classes: {icon: 'bg-white'},
-      },
-      {
-        title: 'CI/CD (déploiement automatisé)',
-        description: 'Livrer automatiquement et rapidement votre solution, pour un temps court entre le développement et la livraison.',
-        classes: {icon: 'bg-white'},
-        icon: 'tabler:package',
-      },
-      {
-        title: 'Mise à jour',
-        description: 'Mettre en place des mises à jour automatiques et effecuter une veille sur les dépendances.',
-        classes: {icon: 'bg-white'},
-        icon: 'tabler:refresh',
-      },
-      {
-        title: 'Analyse fonctionnelle',
-        description: 'Analyse de vos besoins et propositions de solutions.',
-        classes: {icon: 'bg-white'},
-        icon: 'tabler:search',
-      },
-      {
-        title: 'Tests automatisés',
-        description: 'Tests de votre solution avec Pytest.',
-        classes: {icon: 'bg-white'},
-        icon: 'tabler:check',
-      },
-      {
-        title: 'Flexibilité',
-        description: 'Capacité à s\'adapter aux exigences de votre projet.',
-        classes: {icon: 'bg-white'},
-        icon: 'tabler:thumb-up',
-      },
-    ]}
-  />
-
+  
   <!-- Content Widget **************** -->
 
   <Content
